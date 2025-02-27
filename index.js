@@ -53,6 +53,7 @@ function saveData() {
 }
 function home() {
   let str = `
+    <div class="w-100 bg-warning m-5 p-5 rounded text-center">
       <h3>Welcome ${user.name}</h3>
       <button onclick='showLogin()'>Logout</button>
       <p><select id="type" onchange='showUser()'>
@@ -65,7 +66,7 @@ function home() {
          <p><input type="number" id="amount" placeholder="Enter Amount"></p>
          <button onclick='saveData()'>Submit</button>
          <p><b>Current Balance: <span id='spBalance'>${user.balance}</span></b></p>
-
+</div>
       `;
   root.innerHTML = str;
 }
@@ -102,25 +103,27 @@ function chkUser() {
 }
 function showForm() {
   let str = `
+  <div class="w-100 bg-light m-5 p-5 rounded text-center">
   <h2>Registration Form</h2>
-  <p><input type="text" id="name" placeholder="Name"></p>
-  <p><input type="text" id="email" placeholder="Email"></p>
-  <p><input type="password" id="password" placeholder="Password"></p>
-  <p><input type="date" id="dob"></p>
-  <p><button onclick='addUser()'>Submit</button></p>
-  <p>Already a member?<button onclick='showLogin()'>Login Here</button></p>
-  `;
+  <p><input type="text" class='form-control' id="name" placeholder="Name"></p>
+  <p><input type="text"  class='form-control' id="email" placeholder="Email"></p>
+  <p><input type="password"  class='form-control' id="password" placeholder="Password"></p>
+  <p><input type="date"  class='form-control' id="dob"></p>
+  <p><button onclick='addUser()' class="btn btn-primary w-100">Submit</button></p>
+  <p>Already a member?<button onclick='showLogin()' class="btn btn-success mt-5 w-100">Login Here</button></p>
+  </div>
+  ` ;
   root.innerHTML = str;
 }
 function showLogin() {
   let str = `
-  <div>
+  <div class=" bg-danger m-5 p-5 rounded text-center">
       <h2>Login Form</h2>
       <div id='msg'></div>
-      <p><input id="email" type="text"></p>
-      <p><input id="password" type="password"></p>
-      <button onclick='chkUser()'>Log In</button>
-      <p><button onclick='showForm()'>Create Account</button></p>
+      <p><input id="email" class='form-control'type="text"></p>
+      <p><input id="password" class='form-control' type="password"></p>
+      <button onclick='chkUser()' class="btn btn-primary w-100">Log In</button>
+      <p><button onclick='showForm()' class="btn btn-success mt-5">Create Account</button></p>
   </div>
   `;
   root.innerHTML = str;
